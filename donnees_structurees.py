@@ -26,10 +26,15 @@ while True:
                         print("veuillez entrer un entier")
             except ValueError:
                 print("entrer un nombre entre 1 et 4")
-        print("Votre facture Hors taxes est de ", prix_tot)
         if prix_tot > 200:
-            prix_tot -= ((prix_tot * 5) / 100)
-        print("Votre facture TTC est de ", prix_tot + ((prix_tot * 20) / 100))
+            print("Votre facture Hors taxes est de ", prix_tot, " euros")
+            print("Votre remise de 5% est de ", round((prix_tot * 5) / 100), " euros")
+            prix_remise = round(prix_tot - (prix_tot * 5) / 100)
+            print ("Votre facture final HT est de " , prix_remise, "euros")
+            print("Votre facture TTC est de ", round(prix_remise + ((prix_remise * 20) / 100), 2), " euros")
+        else :
+            print("Votre facture Hors taxes est de ", prix_tot, " euros")
+            print("Votre facture TTC est de ", round(prix_tot + ((prix_tot * 20) / 100), 2), " euros")
         break
     except ValueError:
         print("entrer un nombre")
