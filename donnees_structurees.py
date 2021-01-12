@@ -26,6 +26,7 @@ while True:
                         print("veuillez entrer un entier")
             except ValueError:
                 print("entrer un nombre entre 1 et 4")
+
         if prix_tot > 200:
             print("Votre facture Hors taxes est de ", prix_tot, " euros")
             print("Votre remise de 5% est de ", round((prix_tot * 5) / 100), " euros")
